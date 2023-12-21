@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище audiodbModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Artist">
+      <EntityTypeMapping TypeName="audiodbModel.Artist">
+        <MappingFragment StoreEntitySet="Artist">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="artist_name" ColumnName="artist_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song">
+      <EntityTypeMapping TypeName="audiodbModel.Song">
+        <MappingFragment StoreEntitySet="Song">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="song_name" ColumnName="song_name" />
+          <ScalarProperty Name="artist_id" ColumnName="artist_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
