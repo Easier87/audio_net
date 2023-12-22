@@ -61,16 +61,7 @@ namespace audio_net.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
-        /// </summary>
-        internal static string artist_name {
-            get {
-                return ResourceManager.GetString("artist_name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на {&quot;1&quot;, &quot;2&quot;, &quot;3&quot;}.
         /// </summary>
         internal static string song_name {
             get {

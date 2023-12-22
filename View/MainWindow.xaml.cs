@@ -16,60 +16,66 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace audio_net
 {
 
     public partial class MainWindow : Window
     {
-        public MediaPlayer player;
-
+        
+        string filepath;
         string conString = "Data Source=RAZDOLBAI\\SQLEXPRESS;Initial Catalog=audiodb;Integrated security=true";
 
+        MediaPlayer player = new MediaPlayer();
+        
         public MainWindow()
         {
             InitializeComponent();
 
             SqlConnection con = new SqlConnection(conString);
             con.Open();
-
-            string Sql = "select song_name from dbo.Song";
-            SqlCommand cmd = new SqlCommand(Sql, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-
-            List<string> rows = new List<string>();
-
-            string row = null;
-            while (dr.Read())
-            {
-                row = dr[0].ToString();
-                rows.Add(row);
-            }
-            dr.Close();
             
+            ArtistName.Text = SongName.Text;
             
+
         }
-    
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Аудиофалы (*.mp3)|*.mp3";
+            openFileDialog.Multiselect = false;
+
+            bool? dialogOk = openFileDialog.ShowDialog();
+            if (dialogOk == true)
+            {
+                filepath = openFileDialog.FileName;
+                player.Open(new Uri(filepath));
+            }
+
+        }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         public void Play_Click(object sender, RoutedEventArgs e)
         {
-            
+            player.Play();
         }
 
         private void Pause_Click(object sender, RoutedEventArgs e)
         {
-
+            player.Pause();
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        
     }
 }

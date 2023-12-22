@@ -49,6 +49,8 @@
                         <Image Source="/View/next.png"/>
                     </Button>
 
+                    <Button Height="30" Width="100" Margin="40 0 0 0" Content="Выбрать песню" Click="Button_Click"/>
+
                     <StackPanel VerticalAlignment="Center" Margin="20 0 0 0">
                         <TextBlock x:Name="SongName"  Foreground="White"/>
                         <TextBlock x:Name="ArtistName" Foreground="White" Margin="0 5 0 0"/>
@@ -56,6 +58,7 @@
 
                 </StackPanel>
             </Border>
+            <TextBlock x:Name="Song_Name" Opacity="0" IsHitTestVisible="False"/>
 
             <Frame x:Name="Screen" Grid.Column="1" NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
 

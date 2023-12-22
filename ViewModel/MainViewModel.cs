@@ -1,5 +1,6 @@
 ﻿using audio_net.View;
 using GalaSoft.MvvmLight.Command;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -10,6 +11,7 @@ namespace audio_net.ViewModel
         private Page search = new Search();
         private Page add = new Add(null);
         private Page most_main = new MostMain();
+        private ObservableCollection<string> strings = new ObservableCollection<string>();
 
         private Page _CurrentPage = new MostMain();
 

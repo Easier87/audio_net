@@ -31,7 +31,7 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <ListView x:Name="SongsList" Background="#1b1b1b" Foreground="Black">
+                <ListView x:Name="SongsList" Background="#1b1b1b" Foreground="Black" SelectionChanged="SongsList_SelectionChanged">
                     
                 </ListView>
             </Grid>

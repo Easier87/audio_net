@@ -8,6 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MostMain">
 
+    <Page.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
     <Border Background="#1b1b1b">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -15,14 +20,9 @@
                 <ColumnDefinition Width="31*"/>
             </Grid.ColumnDefinitions>
 
-            <Border BorderBrush="Black" BorderThickness="1">
-                <StackPanel VerticalAlignment="Center" Height="400">
-                    <Button Content="Рок" Height="100" Width="300" />
-                    <Button Content="Хип-Поп" Height="100" Width="300"/>
-                    <Button Content="Альтернатива" Height="100" Width="300"/>
-                    <Button Content="Классика" Height="100" Width="300"/>
-                </StackPanel>
-            </Border>
+            <ListView x:Name="SongsList" Background="#1b1b1b" Foreground="Black">
+                
+            </ListView>
 
             <Border Grid.Column="1" Background="#292929" BorderBrush="Black" BorderThickness="1">
 

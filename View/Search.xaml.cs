@@ -86,6 +86,11 @@ namespace audio_net.View
             RefreshList(filteredList);
         }
 
-
+        private void SongsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.SongName.Text = SongsList.SelectedItem.ToString();
+            mainWindow.ShowDialog();
+        }
     }
 }
